@@ -1,6 +1,6 @@
 'use client';
-import { PageHero, GradientRule, SectionHeader, ResourceCard, Pill, JenNote, Tag, ClosingNote } from '@/components/resource-components';
- 
+import { PageHero, GradientRule, SectionHeader, PageContainer, ResourceCard, JenNote, Tag, ClosingNote } from '@/components/resource-components';
+
 export default function TrainingsPage() {
   const trainings = [
     { name: 'AltFunktion', href: 'https://www.altfunktion.com/my-blog', cost: 'Free', level: 'Beginner → Advanced', desc: 'Fantastic CTI and cybersecurity resources across TikTok, YouTube, and a blog. Jennifer Funk just keeps growing this resource and it shows.', jenNote: 'I found Jennifer through TikTok and she is genuinely creating some of the best accessible CTI education out there.' },
@@ -15,7 +15,7 @@ export default function TrainingsPage() {
     { name: 'SANS', href: 'https://www.sans.org/security-resources/', cost: 'Free → $$$$', level: 'Beginner → Advanced', desc: 'The premiere cybersecurity learning standard. Free resources including their blog, all the way up to ~$10,000 for an on-demand CTI course with cert attempt included.' },
     { name: 'Mandiant Academy', href: 'https://www.mandiant.com/academy/course-registration', cost: 'Paid ($2–3K USD)', level: 'Beginner → Advanced', desc: 'The Mandiant name carries serious weight. Their Threat Intelligence Production course is phenomenal. If you can get access, do it.', jenNote: 'Google bought Mandiant for a reason and that reason was not because they suck. Their training is elite.' },
   ];
- 
+
   return (
     <>
       <PageHero
@@ -26,37 +26,32 @@ export default function TrainingsPage() {
       />
       <GradientRule />
       <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
-        <SectionHeader
-          number={`${trainings.length} resources`}
-          title="Where to Learn CTI"
-          desc="Sorted roughly from free/beginner-friendly to paid/advanced. The free ones at the top are genuinely excellent — don't skip them just because they're free."
-        />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '12px' }}>
-          {trainings.map((t, i) => (
-            <ResourceCard key={i}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px', gap: '8px' }}>
-                <a href={t.href} target="_blank" rel="noopener noreferrer" style={{
-                  fontFamily: "'Cormorant Garamond', serif", fontSize: '18px',
-                  fontWeight: 700, color: 'var(--ink)', textDecoration: 'none',
-                }}>
-                  {t.name}
-                </a>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-end', flexShrink: 0 }}>
-                  <Tag variant={t.cost.startsWith('Free') ? 'free' : 'paid'}>{t.cost}</Tag>
-                  <Tag variant={t.level.includes('Beginner') ? 'beginner' : 'advanced'}>{t.level}</Tag>
+        <PageContainer>
+          <SectionHeader
+            number={`${trainings.length} resources`}
+            title="Where to Learn CTI"
+            desc="Sorted roughly from free/beginner-friendly to paid/advanced. The free ones at the top are genuinely excellent — don't skip them just because they're free."
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '12px' }}>
+            {trainings.map((t, i) => (
+              <ResourceCard key={i}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px', gap: '8px' }}>
+                  <a href={t.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>
+                    {t.name}
+                  </a>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-end', flexShrink: 0 }}>
+                    <Tag variant={t.cost.startsWith('Free') ? 'free' : 'paid'}>{t.cost}</Tag>
+                    <Tag variant={t.level.includes('Beginner') ? 'beginner' : 'advanced'}>{t.level}</Tag>
+                  </div>
                 </div>
-              </div>
-              <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, fontWeight: 300 }}>{t.desc}</p>
-              {t.jenNote && <JenNote>{t.jenNote}</JenNote>}
-            </ResourceCard>
-          ))}
-        </div>
+                <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, fontWeight: 300 }}>{t.desc}</p>
+                {t.jenNote && <JenNote>{t.jenNote}</JenNote>}
+              </ResourceCard>
+            ))}
+          </div>
+        </PageContainer>
       </section>
-      <ClosingNote
-        text="Ready to get certified? Check out the Certifications page for what's worth your time and money."
-        linkText="View Certifications →"
-        linkHref="/certifications"
-      />
+      <ClosingNote text="Ready to get certified? Check out the Certifications page for what's worth your time and money." linkText="View Certifications →" linkHref="/certifications" />
     </>
   );
 }

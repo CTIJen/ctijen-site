@@ -1,12 +1,6 @@
 'use client';
 import React from 'react';
 
-// ── Shared styles ──────────────────────────────────────────────
-export const sectionPad = { padding: '80px 48px' };
-export const cream = { background: 'var(--cream)' };
-export const warmWhite = { background: 'var(--warm-white)' };
-export const plumBg = { background: 'var(--plum)' };
-
 export function GradientRule() {
   return (
     <div style={{
@@ -17,7 +11,17 @@ export function GradientRule() {
 }
 
 export function ThinRule() {
-  return <div style={{ height: '1px', background: 'linear-gradient(to right, var(--cream), var(--border), var(--cream))' }} />;
+  return (
+    <div style={{ height: '1px', background: 'linear-gradient(to right, var(--cream), var(--border), var(--cream))' }} />
+  );
+}
+
+export function PageContainer({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+      {children}
+    </div>
+  );
 }
 
 export function PageHero({ eyebrow, title, titleEm, desc }: {
@@ -37,7 +41,7 @@ export function PageHero({ eyebrow, title, titleEm, desc }: {
         position: 'absolute', right: '48px', top: '32px',
         fontSize: '130px', opacity: 0.04, lineHeight: 1, pointerEvents: 'none',
       }}>☠</div>
-      <div style={{ maxWidth: '760px' }}>
+      <PageContainer>
         <div style={{
           fontFamily: "'DM Mono', monospace",
           fontSize: '10px', letterSpacing: '0.22em',
@@ -52,9 +56,9 @@ export function PageHero({ eyebrow, title, titleEm, desc }: {
         </h1>
         <p style={{
           fontSize: '15px', fontWeight: 300,
-          color: 'rgba(250,247,242,0.5)', maxWidth: '480px', lineHeight: 1.75,
+          color: 'rgba(250,247,242,0.5)', maxWidth: '560px', lineHeight: 1.75,
         }}>{desc}</p>
-      </div>
+      </PageContainer>
     </section>
   );
 }
@@ -83,12 +87,12 @@ export function SectionHeader({ number, title, desc, light = false }: {
   );
 }
 
-export function ResourceCard({ children, hover = true }: { children: React.ReactNode; hover?: boolean }) {
+export function ResourceCard({ children }: { children: React.ReactNode }) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
-      onMouseEnter={() => hover && setHovered(true)}
-      onMouseLeave={() => hover && setHovered(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         background: 'var(--warm-white)',
         border: `1px solid ${hovered ? 'rgba(201,165,90,0.4)' : 'var(--border)'}`,
@@ -102,41 +106,10 @@ export function ResourceCard({ children, hover = true }: { children: React.React
   );
 }
 
-export function Pill({ href, children, variant = 'default' }: {
-  href: string; children: React.ReactNode; variant?: 'default' | 'gold' | 'plum';
-}) {
-  const [hovered, setHovered] = React.useState(false);
-  const colors = {
-    default: { base: 'var(--mid)', hover: 'var(--ink)', border: 'var(--border)', hoverBg: 'var(--ink)', hoverColor: 'var(--cream)' },
-    gold: { base: 'var(--gold-dim)', hover: 'var(--gold-dim)', border: 'rgba(201,165,90,0.3)', hoverBg: 'var(--gold-dim)', hoverColor: '#fff' },
-    plum: { base: 'var(--plum)', hover: 'var(--plum)', border: 'rgba(45,27,61,0.2)', hoverBg: 'var(--plum)', hoverColor: 'var(--cream)' },
-  }[variant];
-
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        fontFamily: "'DM Mono', monospace", fontSize: '10px',
-        letterSpacing: '0.08em', textTransform: 'uppercase',
-        color: hovered ? colors.hoverColor : colors.base,
-        textDecoration: 'none',
-        border: `1px solid ${colors.border}`,
-        borderRadius: '2px', padding: '4px 10px',
-        display: 'inline-block', transition: 'all 0.15s',
-        background: hovered ? colors.hoverBg : 'transparent',
-        whiteSpace: 'nowrap' as const,
-      }}>
-      {children}
-    </a>
-  );
-}
-
 export function JenNote({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      marginTop: '12px',
-      padding: '10px 14px',
+      marginTop: '12px', padding: '10px 14px',
       background: 'rgba(201,165,90,0.07)',
       borderLeft: '2px solid var(--gold)',
       borderRadius: '0 3px 3px 0',
@@ -154,7 +127,10 @@ export function JenNote({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function Tag({ children, variant = 'default' }: { children: React.ReactNode; variant?: 'free' | 'paid' | 'default' | 'beginner' | 'advanced' }) {
+export function Tag({ children, variant = 'default' }: {
+  children: React.ReactNode;
+  variant?: 'free' | 'paid' | 'default' | 'beginner' | 'advanced';
+}) {
   const styles = {
     free: { bg: 'rgba(26,107,58,0.1)', color: '#1a6b3a', border: 'rgba(26,107,58,0.2)' },
     paid: { bg: 'rgba(180,83,9,0.1)', color: '#b45309', border: 'rgba(180,83,9,0.2)' },
@@ -175,33 +151,38 @@ export function Tag({ children, variant = 'default' }: { children: React.ReactNo
   );
 }
 
-export function ClosingNote({ text, linkText, linkHref }: { text: string; linkText: string; linkHref: string }) {
+export function ClosingNote({ text, linkText, linkHref }: {
+  text: string; linkText: string; linkHref: string;
+}) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div style={{
       background: 'var(--plum)', padding: '32px 48px',
-      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      gap: '24px', borderTop: '1px solid rgba(255,255,255,0.06)',
+      borderTop: '1px solid rgba(255,255,255,0.06)',
     }}>
-      <p style={{
-        fontFamily: "'Cormorant Garamond', serif", fontSize: '15px',
-        fontStyle: 'italic', color: 'rgba(250,247,242,0.5)', lineHeight: 1.6, maxWidth: '560px',
-      }}>{text}</p>
-      <a href={linkHref}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        style={{
-          fontFamily: "'DM Mono', monospace", fontSize: '10px',
-          letterSpacing: '0.14em', textTransform: 'uppercase',
-          color: hovered ? 'var(--plum)' : 'var(--gold)',
-          textDecoration: 'none',
-          border: '1px solid rgba(201,165,90,0.3)',
-          borderRadius: '3px', padding: '12px 24px',
-          whiteSpace: 'nowrap' as const, transition: 'all 0.2s', flexShrink: 0,
-          background: hovered ? 'var(--gold)' : 'transparent',
-        }}>
-        {linkText}
-      </a>
+      <PageContainer>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
+          <p style={{
+            fontFamily: "'Cormorant Garamond', serif", fontSize: '15px',
+            fontStyle: 'italic', color: 'rgba(250,247,242,0.5)', lineHeight: 1.6, maxWidth: '560px',
+          }}>{text}</p>
+          <a href={linkHref}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+              fontFamily: "'DM Mono', monospace", fontSize: '10px',
+              letterSpacing: '0.14em', textTransform: 'uppercase',
+              color: hovered ? 'var(--plum)' : 'var(--gold)',
+              textDecoration: 'none',
+              border: '1px solid rgba(201,165,90,0.3)',
+              borderRadius: '3px', padding: '12px 24px',
+              whiteSpace: 'nowrap' as const, transition: 'all 0.2s', flexShrink: 0,
+              background: hovered ? 'var(--gold)' : 'transparent',
+            }}>
+            {linkText}
+          </a>
+        </div>
+      </PageContainer>
     </div>
   );
 }
