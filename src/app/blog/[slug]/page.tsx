@@ -107,7 +107,7 @@ export async function generateMetadata(props: any) {
 
       {/* POST CONTENT */}
       <section style={{ padding: '64px 48px 96px', background: 'var(--cream)' }}>
-        <div style={{ maxWidth: '760px' }}>
+        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <div
             className="prose"
             dangerouslySetInnerHTML={{ __html: post.content }}
