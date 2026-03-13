@@ -105,44 +105,52 @@ export async function generateMetadata(props: any) {
         background: 'linear-gradient(to right, var(--plum), var(--gold), var(--dusty-pink), var(--gold), var(--plum))',
       }} />
 
-      {/* POST CONTENT */}
-      <section style={{ padding: '64px 48px 96px', background: 'var(--cream)' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <div
-            className="prose"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+     {/* POST CONTENT */}
+<section style={{ 
+  padding: '64px 0 96px', 
+  background: 'var(--cream)',
+  width: '100%',
+}}>
+  <div style={{ 
+    maxWidth: '760px', 
+    margin: '0 auto',
+    padding: '0 24px',
+  }}>
+    <div
+      className="prose"
+      dangerouslySetInnerHTML={{ __html: post.content }}
+    />
 
-          <div style={{
-            marginTop: '64px',
-            paddingTop: '32px',
-            borderTop: '1px solid var(--border)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-            <Link href="/blog" style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: '10px',
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: 'var(--gold-dim)',
-              textDecoration: 'none',
-              border: '1px solid rgba(201,165,90,0.3)',
-              borderRadius: '3px',
-              padding: '10px 20px',
-            }}>
-              ← All posts
-            </Link>
-            <span style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: '10px',
-              color: 'var(--mid)',
-              letterSpacing: '0.1em',
-            }}>CTIJen™</span>
-          </div>
-        </div>
-      </section>
+    <div style={{
+      marginTop: '64px',
+      paddingTop: '32px',
+      borderTop: '1px solid var(--border)',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    }}>
+      <Link href="/blog" style={{
+        fontFamily: "'DM Mono', monospace",
+        fontSize: '10px',
+        letterSpacing: '0.14em',
+        textTransform: 'uppercase',
+        color: 'var(--gold-dim)',
+        textDecoration: 'none',
+        border: '1px solid rgba(201,165,90,0.3)',
+        borderRadius: '3px',
+        padding: '10px 20px',
+      }}>
+        ← All posts
+      </Link>
+      <span style={{
+        fontFamily: "'DM Mono', monospace",
+        fontSize: '10px',
+        color: 'var(--mid)',
+        letterSpacing: '0.1em',
+      }}>CTIJen™</span>
+    </div>
+  </div>
+</section>
     </>
   );
 }
