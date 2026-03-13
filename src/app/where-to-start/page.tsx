@@ -13,15 +13,16 @@ export default function WhereToStartPage() {
       <GradientRule />
       <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
         <PageContainer>
-          <SectionHeader
-            number="The most important resource"
-            title="Katie Nickels' CTI Self-Study Plan"
-            desc="Start here. Full stop."
-          />
-          <div style={{
-            background: 'var(--warm-white)', border: '1px solid var(--border)',
-            borderRadius: '5px', padding: '32px', maxWidth: '760px',
-          }}>
+          <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+            <SectionHeader
+              number="The most important resource"
+              title="Katie Nickels' CTI Self-Study Plan"
+              desc="Start here. Full stop."
+            />
+            <div style={{
+              background: 'var(--warm-white)', border: '1px solid var(--border)',
+              borderRadius: '5px', padding: '32px',
+            }}>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '3px 8px', borderRadius: '2px', background: 'rgba(26,107,58,0.1)', color: '#1a6b3a', border: '1px solid rgba(26,107,58,0.2)' }}>Free</span>
               <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', letterSpacing: '0.1em', textTransform: 'uppercase', padding: '3px 8px', borderRadius: '2px', background: 'rgba(37,99,168,0.1)', color: '#2563a8', border: '1px solid rgba(37,99,168,0.2)' }}>Beginner → Advanced</span>
@@ -46,9 +47,9 @@ export default function WhereToStartPage() {
             </div>
           </div>
 
-          <div style={{ marginTop: '48px' }}>
-            <SectionHeader number="Also worth reading" title="Getting Started in CTI: 4 Pieces of Advice" />
-            <div style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', padding: '28px', maxWidth: '760px' }}>
+            <div style={{ marginTop: '48px' }}>
+              <SectionHeader number="Also worth reading" title="Getting Started in CTI: 4 Pieces of Advice" />
+              <div style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', padding: '28px' }}>
               <p style={{ fontSize: '14px', color: 'var(--mid)', lineHeight: 1.75, fontWeight: 300, marginBottom: '16px' }}>
                 Another Katie Nickels piece from Red Canary — practical, actionable advice on breaking into the field.
                 Pairs perfectly with the self-study plan above.
@@ -58,6 +59,7 @@ export default function WhereToStartPage() {
                 style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-dim)', textDecoration: 'none', border: '1px solid rgba(201,165,90,0.3)', borderRadius: '3px', padding: '10px 20px', display: 'inline-block' }}>
                 Read the article →
               </a>
+              </div>
             </div>
           </div>
         </PageContainer>
