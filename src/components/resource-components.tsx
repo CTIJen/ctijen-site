@@ -17,12 +17,12 @@ export function ThinRule() {
 }
 
 export function PageContainer({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
-      {children}
-    </div>
-  );
-}
+    return (
+      <div style={{ maxWidth: '1100px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
+        {children}
+      </div>
+    );
+  }
 
 export function PageHero({ eyebrow, title, titleEm, desc }: {
   eyebrow: string;
