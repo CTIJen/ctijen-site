@@ -1,3 +1,6 @@
+'use client';
+import { PageHero, GradientRule, SectionHeader, ResourceCard, ClosingNote } from '@/components/resource-components';
+
 export default function PodcastsPage() {
     const ctiPodcasts = [
       { name: 'Future of Threat Intelligence', href: 'https://podcasts.apple.com/us/podcast/future-of-threat-intelligence/id1631947902', desc: 'Team Cymru explores the shift from reactive detection to proactive threat management. Top cybersecurity leaders and practitioners sharing real strategies.' },

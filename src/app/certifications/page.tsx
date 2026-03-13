@@ -1,3 +1,6 @@
+'use client';
+import { PageHero, GradientRule, SectionHeader, Tag, ClosingNote } from '@/components/resource-components';
+
 export default function CertificationsPage() {
     const certs = [
       { name: 'Paul Jerimy Security Certification Roadmap', href: 'https://pauljerimy.com/security-certification-roadmap/', cost: 'Free', ctiSpecific: false, desc: 'The most comprehensive overview of all certifications across every cybersecurity discipline. CTI sits at the edge of Incident Handling and Pen Testing. Start here for the big picture.' },
