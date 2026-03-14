@@ -29,7 +29,8 @@ export default function BlogPage() {
       }} />
 
       {/* POSTS */}
-      <section style={{ padding: '80px 48px', background: 'var(--cream)', minHeight: '60vh' }}>
+      <section style={{ padding: '80px 0', background: 'var(--cream)', minHeight: '60vh' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 48px' }}>
         {posts.length === 0 ? (
           <div style={{
             textAlign: 'center',
@@ -147,6 +148,7 @@ export default function BlogPage() {
             ))}
           </div>
         )}
+       </div>
       </section>
     </>
   );

@@ -49,7 +49,7 @@ export default function FAQsPage() {
           </div>
         </PageContainer>
       </section>
-      <ClosingNote text="Have a question that's not answered here? Send it over and Jen may add it to the list." linkText="Ask a question →" linkHref="/#contact" />
+      <ClosingNote text="Have a question that's not answered here? Send it over and I may add it to the list!" linkText="Ask a question →" linkHref="/#contact" />
     </>
   );
 }

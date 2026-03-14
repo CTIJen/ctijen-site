@@ -185,8 +185,8 @@ export default function Home() {
           margin: '0 auto 60px',
           lineHeight: 1.8,
         }}>
-          Whether you're just starting out or deep in the weeds —
-          here's what Jen's built out so far.
+          Whether you're just starting out or deep in the weeds,
+          there's something for every level of your CTI journey
         </p>
 
         <div style={{
@@ -480,19 +480,6 @@ export default function Home() {
               Send it →
             </button>
           </form>
-
-          <p style={{
-            marginTop: '24px',
-            fontFamily: "'DM Mono', monospace",
-            fontSize: '11px',
-            color: 'rgba(250,247,242,0.3)',
-            letterSpacing: '0.05em',
-          }}>or email directly at{' '}
-            <a href="mailto:inquiries@ctijen.com" style={{
-              color: 'var(--dusty-pink)',
-              textDecoration: 'none',
-            }}>inquiries@ctijen.com</a>
-          </p>
         </div>
       </section>
     </>

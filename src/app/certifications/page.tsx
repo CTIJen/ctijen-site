@@ -20,7 +20,7 @@ export default function CertificationsPage() {
       <GradientRule />
       <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
         <PageContainer>
-          <div style={{ background: 'var(--plum)', borderRadius: '5px', padding: '28px 32px', maxWidth: '760px', marginBottom: '48px' }}>
+          <div style={{ background: 'var(--plum)', borderRadius: '5px', padding: '28px 32px', maxWidth: '100%', marginBottom: '48px' }}>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '12px' }}>Jen's take on certs</div>
             <p style={{ fontSize: '15px', color: 'rgba(250,247,242,0.7)', lineHeight: 1.8, fontWeight: 300 }}>
               Certifications are excellent at showcasing knowledge of key principles. If an employer needs to see real-world application,

@@ -187,8 +187,8 @@ export default function PeopleOrgsPage() {
           People, Orgs<br />&amp; <em>Communities</em>
         </h1>
         <p className="page-hero-desc" style={{ marginBottom: '40px' }}>
-          This isn't a database pull — it's a curated list of practitioners, organizations, and communities that Jen
-          has learned from, worked alongside, or recommends without hesitation.
+          This isn't a database pull — it's a curated list of practitioners, organizations, and communities that I
+          have learned from, worked alongside, or recommend without hesitation.🙌
         </p>
 
         {/* sticky chapter tabs */}
@@ -271,17 +271,8 @@ export default function PeopleOrgsPage() {
               }}>
                 These are the practitioners I'd point any CTI analyst toward on day one —
                 educators, builders, and community leaders who consistently put out work worth your attention.
-                Jen's personal recommendations, not a sponsored list.
               </p>
             </div>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: '72px',
-              fontWeight: 400,
-              color: 'var(--border)',
-              lineHeight: 1,
-              paddingLeft: '24px',
-            }}>09</div>
           </div>
         </div>
 
@@ -454,17 +445,10 @@ export default function PeopleOrgsPage() {
               maxWidth: '560px',
               lineHeight: 1.75,
             }}>
-              Organizations producing valuable CTI research, frameworks, and tooling that Jen regularly
-              references and recommends. These aren't sponsorships — they're the real ones.
+              Organizations producing valuable CTI research, frameworks, and tooling that I regularly
+              reference and recommend.
             </p>
           </div>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '72px',
-            fontWeight: 400,
-            color: 'rgba(255,255,255,0.08)',
-            lineHeight: 1,
-          }}>05</div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -594,16 +578,8 @@ export default function PeopleOrgsPage() {
               lineHeight: 1.75,
             }}>
               Places to hang out, stay informed, and find your people in the CTI and broader security community.
-              The signal-to-noise ratio on all of these is genuinely good.
             </p>
           </div>
-          <div style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: '72px',
-            fontWeight: 400,
-            color: 'var(--border)',
-            lineHeight: 1,
-          }}>04</div>
         </div>
 
         <div style={{
@@ -714,7 +690,7 @@ export default function PeopleOrgsPage() {
                 borderRadius: '2px',
                 fontSize: '9px',
                 border: '1px solid rgba(201,165,90,0.25)',
-              }}>Newsletter</span>
+              }}>Newsletters</span>
               Worth your inbox
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -798,8 +774,8 @@ export default function PeopleOrgsPage() {
           lineHeight: 1.6,
           maxWidth: '560px',
         }}>
-          Know someone or something that should be on this list? Jen's always looking to expand it —
-          reach out and make the case.
+          Know someone or something that should be on this list? I'm always looking to expand it!
+          Reach out and make the case.
         </p>
         <a href="/#contact" style={{
           fontFamily: "'DM Mono', monospace",

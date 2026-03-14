@@ -28,11 +28,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div>
             <div className="footer-logo">CTI<span>Jen</span>™</div>
             <p className="footer-tagline">
-              Everything CTI — an ever-growing one-stop shop for threat intelligence resources, curated by Jen.
+              An ever-growing one-stop shop for threat intelligence resources.
             </p>
-            <a href="mailto:inquiries@ctijen.com" className="footer-email">
-              inquiries@ctijen.com
-            </a>
             <div className="footer-social">
               <a href="https://ctijen.myshopify.com" target="_blank">Merch</a>
               <a href="/blog">Blog</a>

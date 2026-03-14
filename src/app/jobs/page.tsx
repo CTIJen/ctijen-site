@@ -17,7 +17,7 @@ export default function JobsPage() {
       <GradientRule />
       <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
         <PageContainer>
-          <div style={{ background: 'var(--plum)', borderRadius: '5px', padding: '28px 32px', maxWidth: '760px', marginBottom: '48px' }}>
+          <div style={{ background: 'var(--plum)', borderRadius: '5px', padding: '28px 32px', maxWidth: '100%', marginBottom: '48px' }}>
             <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '12px' }}>A note on job titles</div>
             <p style={{ fontSize: '15px', color: 'rgba(250,247,242,0.7)', lineHeight: 1.8, fontWeight: 300 }}>
               CTI roles go by many names: Threat Intelligence Analyst, Cyber Threat Analyst, Intelligence Analyst, Threat Researcher, Detection Engineer, and more. Search broadly. Also search for roles at companies known for CTI work — Mandiant, CrowdStrike, Recorded Future, Red Canary, Team Cymru, and the major banks all have dedicated CTI teams.

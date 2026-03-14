@@ -174,7 +174,7 @@ export default function ResourcesPage() {
         eyebrow="CTIJen Resources"
         title="The"
         titleEm="Compendium"
-        desc="Everything Jen has built out — an ever-growing, one-stop shop for CTI resources. New to the field or deep in the weeds, there's something here for you."
+        desc="An ever-growing, one-stop shop for CTI resources. New to the field or deep in the weeds, there's something here for you."
       />
       <GradientRule />
 
@@ -192,7 +192,7 @@ export default function ResourcesPage() {
               color: 'var(--mid)', fontWeight: 300, lineHeight: 1.75,
             }}>
               None of these are sponsored. No affiliate links. No compensation received.
-              Just resources Jen has used, evaluated, or recommends — curated with the community in mind.
+              Just resources I've used, evaluated, or recommend!
             </p>
           </div>
 
@@ -209,7 +209,7 @@ export default function ResourcesPage() {
       </section>
 
       <ClosingNote
-        text="Something missing from the compendium? Jen's always looking to add more."
+        text="Something missing from the compendium? I'm always looking to add more!"
         linkText="Make a suggestion →"
         linkHref="/#contact"
       />
