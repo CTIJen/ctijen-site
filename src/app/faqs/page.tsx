@@ -30,7 +30,7 @@ export default function FAQsPage() {
     <>
       <PageHero eyebrow="CTIJen Resources" title="Frequently Asked" titleEm="Questions" desc="The questions Jen gets asked most often, answered honestly." />
       <GradientRule />
-      <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
+      <section style={{ padding: '80px 0', background: 'var(--cream)' }}>
         <PageContainer>
           <div style={{ maxWidth: '760px', display: 'flex', flexDirection: 'column', gap: '2px' }}>
             {faqs.map((faq, i) => (

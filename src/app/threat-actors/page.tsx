@@ -6,7 +6,7 @@ export default function ThreatActorsPage() {
     <>
       <PageHero eyebrow="CTIJen Resources" title="Cyber Threat" titleEm="Actors" desc="Know your adversaries. Jen doesn't like to reinvent the wheel, and on this one, she doesn't have to." />
       <GradientRule />
-      <section style={{ padding: '80px 48px', background: 'var(--cream)' }}>
+      <section style={{ padding: '80px 0', background: 'var(--cream)' }}>
         <PageContainer>
           <div style={{ maxWidth: '760px' }}>
             <SectionHeader number="The best resource" title="ETDA Threat Actor Database" />

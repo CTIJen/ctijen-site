@@ -29,10 +29,9 @@ export default function ConferencesPage() {
       />
       <GradientRule />
       <section style={{ padding: '80px 0', background: 'var(--cream)' }}>
-        <div style={{ padding: '0 48px', marginBottom: '40px' }}>
-          <PageContainer>
+        <PageContainer>
+          <div style={{ marginBottom: '40px' }}>
             <SectionHeader number={`${cons.length} conferences`} title="The Circuit" desc="$ = under $100  |  $$ = $100–500  |  $$$ = $500–1,500  |  $$$$ = $1,500+" />
-          </PageContainer>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {cons.map((con, i) => (
@@ -44,7 +43,7 @@ export default function ConferencesPage() {
             }}
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = i % 2 === 0 ? 'var(--cream)' : 'var(--warm-white)'}>
-              <div style={{ padding: '20px 24px 20px 48px', borderRight: '1px solid var(--border)' }}>
+              <div style={{ padding: '20px 24px', borderRight: '1px solid var(--border)' }}>
                 <a href={con.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '17px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>{con.name}</a>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', color: 'var(--mid)', letterSpacing: '0.08em' }}>{con.type}</span>
               </div>
@@ -61,6 +60,7 @@ export default function ConferencesPage() {
             </div>
           ))}
         </div>
+        </PageContainer>
       </section>
       <ClosingNote text="Missing a con that should be here? Especially looking to add more regional and diversity-focused events." linkText="Suggest a con →" linkHref="/#contact" />
     </>
