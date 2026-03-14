@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ul className="nav-links">
             <li><a href="/about">About</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="/where-to-start">Resources</a></li>
+            <li><a href="/resources">Resources</a></li>
             <li><a href="https://ctijen.myshopify.com" target="_blank">Merch</a></li>
             <li><a href="/#contact" className="nav-cta">Contact</a></li>
           </ul>
