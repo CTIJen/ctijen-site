@@ -24,7 +24,7 @@ export default function ConferencesPage() {
       <PageHero
         eyebrow="CTIJen Resources"
         title="Cons &"
-        titleEm="Conferences 😎"
+        titleEm="Conferences"
         desc="Where the community gathers. Some of the best CTI knowledge transfer happens in hallway conversations at these events."
       />
       <GradientRule />
