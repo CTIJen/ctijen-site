@@ -1,4 +1,5 @@
 import './globals.css';
+import Nav from '@/components/Nav';
 
 export const metadata = {
   title: 'Cyber Threat Intelli-Jen™',
@@ -9,19 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <nav className="nav">
-          <a href="/" className="nav-logo">
-            CTI<span>Jen</span>™
-          </a>
-          <ul className="nav-links">
-            <li><a href="/about">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/resources">Resources</a></li>
-            <li><a href="https://ctijen.myshopify.com" target="_blank">Merch</a></li>
-            <li><a href="/#contact" className="nav-cta">Contact</a></li>
-          </ul>
-        </nav>
-
+        <Nav />
         <main>{children}</main>
 
         <footer className="footer">
