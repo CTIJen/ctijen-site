@@ -3,6 +3,108 @@
 import Image from 'next/image';
 
 export default function AboutPage() {
+  const communityItems = [
+    {
+      org: 'Stats on Stats',
+      role: 'Podcast guest discussing cybersecurity and career growth in the field',
+      icon: '🎙️',
+      detailTitle: 'Podcast feature',
+      details:
+        'Featured on Stats on Stats to talk through practical cybersecurity growth, field experience, and helping others break into and grow in cyber.',
+      href: 'https://www.youtube.com/@StatsOnStats',
+      hrefLabel: 'Watch on YouTube',
+      photoSrc: '/community-work/stats-on-stats.JPG',
+      photoAlt:
+        'Jen on the Stats on Stats podcast recording in Austin during IntelliCON.',
+    },
+    {
+      org: 'Intellic0n 2026',
+      role: 'Conference speaker',
+      icon: '🎤',
+      detailTitle: 'Speaker spotlight',
+      details:
+        "Spoke at Intellic0n 2026: 'AI + Human Eyes: How We've Processed Our OSINT Using Automation and Good Old Fashioned Double Checking.'",
+      previewIcon: '🏛️',
+      href: 'https://www.intelliguards.com/intellic0n',
+      hrefLabel: 'Intellic0n Homepage',
+      photoSrc: '/community-work/intellic0nspeaking.png',
+      photoAlt:
+        'Jen delivering her presentation on AI and CTI.',
+    },
+    {
+      org: 'The Cyber Weekly',
+      role: 'Podcast guest appearance (latest episode now live)',
+      icon: '📺',
+      detailTitle: 'Latest episode',
+      details:
+        'Joined The Cyber Weekly for a conversation on social engineering in the AI era, cloud security as a frontline challenge, and why balancing community with technology creates stronger security outcomes.',
+      href: 'https://open.spotify.com/episode/6K46hEHoQns2MqB5VJzPHS?si=50541c5e76054a6c',
+      hrefLabel: 'Episode on Spotify',
+      secondaryHref:
+        'https://podcasts.apple.com/us/podcast/the-cyber-weekly/id1715165647?i=1000754820347',
+      secondaryHrefLabel: 'Apple Podcasts',
+      photoSrc: '/community-work/the-cyber-weekly.png',
+      photoAlt:
+        'Jen on The Cyber Weekly podcast.',
+      previewIcon: '🎬',
+    },
+    {
+      org: 'Cybersecurity Cares',
+      role: '2022–present panelist and participant in annual charity telethon fundraiser',
+      icon: '❤️',
+      detailTitle: 'Annual telethon participant',
+      details:
+        'Participates in the Cybersecurity Cares telethon to support nonprofit organizations and help raise funds for causes that strengthen the cybersecurity community.',
+      href: 'https://www.cybersecurity-cares.com/',
+      hrefLabel: 'Cybersecurity Cares',
+      photoSrc: '/community-work/cybersecurity-cares-pictionary.jpg',
+      photoAlt:
+        'Cybersecurity Cares telethon game session with a cybersecurity Pictionary round.',
+    },
+    {
+      org: 'Cyversity',
+      role: '2023–present Mentee and Mentor for those looking to break into or grow in cybersecurity',
+      icon: '🤝',
+      detailTitle: 'Mentee and mentor',
+      details:
+        'Supports Cyversity as both mentee and mentor, contributing to career growth and community development for current and aspiring cybersecurity professionals.',
+      href: 'https://www.cyversity.org/',
+      hrefLabel: 'Visit Cyversity',
+      photoSrc: '/community-work/cyversity-logo-for-light-backgrounds.png',
+      photoAlt:
+        'Cyversity logo with the words Diversify, Educate, Empower.',
+      photoFit: 'contain',
+    },
+    {
+      org: 'Cyberjutsu',
+      role: '2023 & 2024 CyberJutsu Con submission review panelist',
+      icon: '🥷',
+      detailTitle: 'CyberJutsu Con reviewer',
+      details:
+        'Served as a reviewer for CyberJutsu Con talk submissions, helping evaluate community presentations and shape conference content.',
+      href: 'https://womenscyberjutsu.org/page/cyberjutsu-con',
+      hrefLabel: 'CyberJutsu Con',
+      photoSrc: '/community-work/cyberjutsu-reviewers.jpg',
+      photoAlt:
+        'Group photo of CyberJutsu Con reviewers, including Jen.',
+    },
+    {
+      org: 'Ellington Cyber Academy',
+      role: '2023 Keystone project judge for Academy students',
+      icon: '🎓',
+      detailTitle: 'Previous Keystone project judge',
+      details:
+        'Sat on a panel of industry experts providing feedback and guidance to students on their keystoneprojects.',
+      href: 'https://kenneth-ellington-s-school.teachable.com/',
+      hrefLabel: 'Ellington Cyber Academy',
+      photoSrc: '/community-work/ECA-screengrab.png',
+      photoAlt:
+        'Ellington Cyber Academy chat with founder Kenneth Ellington about cyber threat intelligence.',
+      secondaryHref: 'https://youtu.be/yrJYkaGzPrQ?si=kw23JVt5MVEs5aCs',
+      secondaryHrefLabel: 'Jen\'s Interview with Kenneth Ellington',
+    },
+  ];
+
   return (
     <>
       {/* HERO */}
@@ -165,38 +267,19 @@ export default function AboutPage() {
           Cyber Threat Intelligence is nothing without the community around you sharing valuable insights. Here's some of the work Jen has done with the always fantastic CTI community.
         </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-          {[
-            {
-              org: 'Cyberjutsu',
-              role: '2023 & 2024 CyberJutsu Con submission review panelist',
-              icon: '🥷',
-            },
-            {
-              org: 'Cybersecurity Cares',
-              role: '2022–present panelist and participant in annual charity telethon fundraiser',
-              icon: '❤️',
-            },
-            {
-              org: 'Ellington Cyber Academy',
-              role: '2023 Keystone project judge for Academy students',
-              icon: '🎓',
-            },
-            {
-              org: 'Cyversity',
-              role: '2023–present Mentee and Mentor for those looking to break into or grow in cybersecurity',
-              icon: '🤝',
-            },
-          ].map((item, i) => (
-            <div key={i} style={{
-              display: 'grid',
-              gridTemplateColumns: '48px 200px 1fr',
-              gap: '20px',
-              alignItems: 'center',
-              padding: '20px 24px',
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+          gap: '14px',
+        }}>
+          {communityItems.map((item, i) => (
+            <article key={i} style={{
               background: 'var(--warm-white)',
               border: '1px solid var(--border)',
               borderRadius: '5px',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
               transition: 'all 0.18s',
             }}
             onMouseEnter={e => {
@@ -207,20 +290,120 @@ export default function AboutPage() {
               e.currentTarget.style.borderColor = 'var(--border)';
               e.currentTarget.style.boxShadow = 'none';
             }}>
-              <span style={{ fontSize: '22px' }}>{item.icon}</span>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: '17px',
-                fontWeight: 600,
-                color: 'var(--ink)',
-              }}>{item.org}</div>
-              <div style={{
-                fontSize: '13px',
-                color: 'var(--mid)',
-                fontWeight: 300,
-                lineHeight: 1.6,
-              }}>{item.role}</div>
-            </div>
+                width: '100%',
+                aspectRatio: '16 / 9',
+                background: 'rgba(201,165,90,0.06)',
+                borderBottom: '1px solid var(--border)',
+                overflow: 'hidden',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                {item.photoSrc ? (
+                  <Image
+                    src={item.photoSrc}
+                    alt={item.photoAlt || `${item.org} highlight`}
+                    width={800}
+                    height={450}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: item.photoFit === 'contain' ? 'contain' : 'cover',
+                      background: item.photoFit === 'contain' ? 'var(--warm-white)' : 'transparent',
+                    }}
+                  />
+                ) : (
+                  <span style={{ fontSize: '42px', opacity: 0.75 }}>{item.previewIcon || item.icon}</span>
+                )}
+              </div>
+
+              <div style={{ padding: '18px 20px 20px' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  marginBottom: '8px',
+                }}>
+                  <span style={{ fontSize: '17px', lineHeight: 1 }}>{item.icon}</span>
+                  <h3 style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: '22px',
+                    fontWeight: 600,
+                    color: 'var(--ink)',
+                    lineHeight: 1.2,
+                  }}>
+                    {item.org}
+                  </h3>
+                </div>
+
+                <div style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '10px',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold-dim)',
+                  marginBottom: '10px',
+                }}>
+                  {item.role}
+                </div>
+
+                {item.details && (
+                  <p style={{
+                    fontSize: '13px',
+                    color: 'var(--mid)',
+                    lineHeight: 1.65,
+                    fontWeight: 300,
+                    marginBottom: '10px',
+                  }}>
+                    {item.details}
+                  </p>
+                )}
+
+                {(item.href || item.secondaryHref) && (
+                  <div style={{
+                    display: 'flex',
+                    gap: '10px',
+                    flexWrap: 'wrap',
+                  }}>
+                    {item.href && (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: '10px',
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: 'var(--gold-dim)',
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {item.hrefLabel || 'View'} ↗
+                      </a>
+                    )}
+                    {item.secondaryHref && (
+                      <a
+                        href={item.secondaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: '10px',
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: 'var(--gold-dim)',
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {item.secondaryHrefLabel || 'Learn more'} ↗
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </article>
           ))}
         </div>
       </section>

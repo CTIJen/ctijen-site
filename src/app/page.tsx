@@ -1,8 +1,9 @@
-'use client';
-
 import Image from 'next/image';
+import { getAllPosts } from '@/lib/posts';
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <>
       {/* ── HERO ── */}
@@ -95,9 +96,9 @@ export default function Home() {
             maxWidth: '520px',
             margin: '0 auto 40px',
           }}>
-            I love researching threat actor tradecraft to share with the community
+            I love researching threat actors and their tradecraft to share with the community
             and anyone interested in the field. This site is an ever-growing
-            one-stop shop for CTI — check out the resources and let me know what to add!
+            one-stop shop for CTI. Check out the resources and let me know what to add!
           </p>
 
           <div className="fade-4" style={{
@@ -218,16 +219,6 @@ export default function Home() {
               color: 'inherit',
               display: 'block',
               transition: 'all 0.22s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.boxShadow = '0 8px 32px rgba(45,27,61,0.1)';
-              e.currentTarget.style.borderColor = 'rgba(201,165,90,0.45)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'none';
             }}>
               <div style={{
                 display: 'flex',
@@ -309,35 +300,90 @@ export default function Home() {
           margin: '0 auto 40px',
           textAlign: 'left',
         }}>
-          <div style={{
-            background: 'var(--warm-white)',
-            border: '1px solid var(--border)',
-            borderRadius: '5px',
-            padding: '28px',
-          }}>
+          {latestPosts.length === 0 ? (
             <div style={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: '10px',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: 'var(--dusty-pink)',
-              marginBottom: '12px',
-            }}>Coming soon</div>
-            <div style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: '20px',
-              fontWeight: 600,
-              color: 'var(--ink)',
-              marginBottom: '10px',
-              lineHeight: 1.3,
-            }}>Your posts will appear here</div>
-            <div style={{
-              fontSize: '13px',
-              color: 'var(--mid)',
-              fontWeight: 300,
-              lineHeight: 1.65,
-            }}>Once we migrate your blog posts, they'll show up right in this section on the homepage.</div>
-          </div>
+              background: 'var(--warm-white)',
+              border: '1px solid var(--border)',
+              borderRadius: '5px',
+              padding: '28px',
+            }}>
+              <div style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: '10px',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                color: 'var(--dusty-pink)',
+                marginBottom: '12px',
+              }}>Coming soon</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: '20px',
+                fontWeight: 600,
+                color: 'var(--ink)',
+                marginBottom: '10px',
+                lineHeight: 1.3,
+              }}>Your posts will appear here</div>
+              <div style={{
+                fontSize: '13px',
+                color: 'var(--mid)',
+                fontWeight: 300,
+                lineHeight: 1.65,
+              }}>Once we migrate your blog posts, they'll show up right in this section on the homepage.</div>
+            </div>
+          ) : (
+            latestPosts.map((post) => (
+              <a key={post.slug} href={`/blog/${post.slug}`} style={{
+                background: 'var(--warm-white)',
+                border: '1px solid var(--border)',
+                borderRadius: '5px',
+                padding: '28px',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'block',
+              }}>
+                <div style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '10px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--dusty-pink)',
+                  marginBottom: '12px',
+                }}>
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </div>
+                <div style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: '20px',
+                  fontWeight: 600,
+                  color: 'var(--ink)',
+                  marginBottom: '10px',
+                  lineHeight: 1.3,
+                }}>{post.title}</div>
+                {post.excerpt && (
+                  <div style={{
+                    fontSize: '13px',
+                    color: 'var(--mid)',
+                    fontWeight: 300,
+                    lineHeight: 1.65,
+                    marginBottom: '14px',
+                  }}>{post.excerpt}</div>
+                )}
+                <span style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '10px',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold-dim)',
+                }}>
+                  Read post →
+                </span>
+              </a>
+            ))
+          )}
         </div>
 
         <a href="/blog" style={{
