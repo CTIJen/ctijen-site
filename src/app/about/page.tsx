@@ -119,7 +119,7 @@ export default function AboutPage() {
         <h1 className="page-hero-title">
           Walk the <em>Walk</em>
         </h1>
-        <p className="page-hero-desc">
+        <p className="page-hero-desc" style={{ maxWidth: '620px' }}>
           Who am I to be running my mouth like this? Very valid question. Here's the full picture.
         </p>
         <div style={{
@@ -187,16 +187,16 @@ export default function AboutPage() {
           fontWeight: 700,
           letterSpacing: '-0.01em',
           marginBottom: '12px',
-        }}>The credentials</h2>
+        }}>The highlights</h2>
         <p style={{
           fontSize: '14px',
           color: 'var(--mid)',
           fontWeight: 300,
-          maxWidth: '760px',
+          maxWidth: '620px',
           lineHeight: 1.75,
           marginBottom: '42px',
         }}>
-          My day-to-day work is building and operationalizing threat intelligence programs that create measurable outcomes: sharper detections, faster incident response, and clearer executive decision support.
+          My day-to-day work is building and operationalizing threat intelligence that creates measurable outcomes: sharper detections, faster incident response, and clearer executive decision support.
         </p>
 
         <div style={{
@@ -282,7 +282,7 @@ export default function AboutPage() {
           fontSize: '14px',
           color: 'var(--mid)',
           fontWeight: 300,
-          maxWidth: '520px',
+          maxWidth: '620px',
           lineHeight: 1.7,
           marginBottom: '48px',
         }}>
