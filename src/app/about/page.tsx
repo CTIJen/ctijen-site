@@ -464,69 +464,160 @@ export default function AboutPage() {
           lineHeight: 1.7,
           marginBottom: '56px',
         }}>
-          You came here for CTI resources, but here's what makes Jen, Jen.
+          You came here for CTI resources, but here's what makes me, me.
         </p>
 
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '16px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '28px',
         }}>
           {[
             {
-              icon: '🏰',
-              title: 'Big Disney Energy',
-              desc: "I'm drawn to the Disney Parks because almost everyone is actively trying to make everyone else's day better. The kindness there is unmatched — a cast member fishing a Mickey balloon from the rafters, a millennial parent in matching outfits explaining why they love Star Wars. My dream retirement job is a travel agency that helps plan Disney trips for people with disabilities.",
-            },
-            {
               icon: '💪',
               title: 'Fitness',
-              desc: 'I love working out despite one confirmed and one self-diagnosed torn rotator cuff. My back also breaks sometimes. It sucks getting old. 🤣',
+              photos: [
+                { src: '/About/Gym.JPG', alt: 'Jen coaching and training in the gym.' },
+              ],
+              desc: 'I love lifting and coaching, even with a couple of battle scars. I coach Olympic lifting and HIIT at our local gym, and my favorite moment is when a cue finally clicks for someone.',
             },
             {
               icon: '🪖',
-              title: 'Makin\' Stuff & Cosplay',
-              desc: "I 3D printed an entire Phasma armor set — probably my biggest accomplishment ever. I'm a proud member of the 501st Legion: movie-accurate Star Wars \"bad guy\" cosplay with a requirement to use your armor for charity once a year. It's amazing.",
+              title: 'Cosplay & Fandom',
+              photos: [
+                { src: '/About/501st-weird-al.JPG', alt: 'Jen in 501st Legion cosplay at an event.' },
+                { src: '/About/Captain-Phasma.JPG', alt: 'Jen in Captain Phasma armor.' },
+              ],
+              desc: "I 3D printed a full Captain Phasma armor set and joined the 501st Legion. I love using fandom for good through charity troops, and SDCC is a yearly highlight whenever I can get tickets.",
             },
             {
-              icon: '🎲',
-              title: 'Etc.',
-              desc: "I love my friends, my family, and the absolute light of my life: my dog, Yumi. Close second: Beyoncé. I'm a recovering alcoholic and celebrated my 5 year soberversary in 2024 🎉 I love all fashion and am cultivating my own goth style. Wisconsin and Michigan sports forever — Brewers baseball and DEEEETROIT BASKETBALL.",
+              icon: '🏰',
+              title: 'Big Disney Energy',
+              photos: [
+                { src: '/About/Disney-2.jpeg', alt: 'Jen enjoying a Disney Parks trip.' },
+                { src: '/About/Disney.JPG', alt: 'Jen at Disney with a big smile.' },
+              ],
+              desc: "I love Disney Parks because people are intentionally kind there. My long-term dream is helping plan and support Disney trips for families and travelers with disabilities.",
+            },
+            {
+              icon: '🖤',
+              title: 'Style, Music, and Nerd Culture',
+              photos: [
+                { src: '/About/Fashion.jpeg', alt: 'Jen showing her fashion and personal style.' },
+                { src: '/About/When-We-Were-Young.jpeg', alt: 'Jen at the When We Were Young music festival.' },
+              ],
+              desc: "I love fashion, comedy, and all things nerdy - from BG3 and D&D to Drag Race and musicals. Music runs my mood, and my style keeps evolving with me.",
+            },
+            {
+              icon: '🏀',
+              title: 'Family, Recovery, and Home Teams',
+              photos: [
+                { src: '/About/Detroit-Basketball-2.JPG', alt: 'Jen representing Detroit basketball spirit.' },
+                { src: '/About/Detroit-Basketball.JPG', alt: 'Jen cheering for Detroit basketball.' },
+              ],
+              desc: "Friends and family are everything to me. I'm proud of my recovery journey and celebrated my 5-year soberversary in 2024. Wisconsin and Michigan sports forever.",
             },
           ].map((item, i) => (
-            <div key={i} style={{
-              background: 'var(--warm-white)',
-              border: '1px solid var(--border)',
-              borderRadius: '5px',
-              padding: '28px',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.boxShadow = '0 6px 24px rgba(45,27,61,0.08)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.borderColor = 'rgba(201,165,90,0.35)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'none';
-              e.currentTarget.style.borderColor = 'var(--border)';
+            <article key={i} style={{
+              borderTop: '1px solid var(--border)',
+              paddingTop: '24px',
             }}>
-              <div style={{ fontSize: '28px', marginBottom: '14px' }}>{item.icon}</div>
               <div style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: '20px',
-                fontWeight: 600,
-                color: 'var(--ink)',
-                marginBottom: '10px',
-                lineHeight: 1.2,
-              }}>{item.title}</div>
-              <p style={{
-                fontSize: '13px',
-                color: 'var(--mid)',
-                lineHeight: 1.75,
-                fontWeight: 300,
-              }}>{item.desc}</p>
-            </div>
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '18px',
+                alignItems: 'start',
+              }}>
+                <div style={{ order: i % 2 === 0 ? 1 : 2 }}>
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    marginBottom: '10px',
+                  }}>
+                    <span style={{ fontSize: '24px', lineHeight: 1 }}>{item.icon}</span>
+                    <h3 style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: '30px',
+                      fontWeight: 600,
+                      color: 'var(--ink)',
+                      lineHeight: 1.1,
+                    }}>
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'var(--mid)',
+                    lineHeight: 1.78,
+                    fontWeight: 300,
+                    maxWidth: '58ch',
+                  }}>
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div style={{ order: i % 2 === 0 ? 2 : 1 }}>
+                  <div style={{
+                    display: 'grid',
+                    gap: '8px',
+                    gridTemplateColumns: item.photos.length > 1 ? '1.2fr 1fr' : '1fr',
+                  }}>
+                    <div style={{
+                      aspectRatio: i % 2 === 0 ? '4 / 3' : '3 / 4',
+                      overflow: 'hidden',
+                      borderRadius: '14px',
+                      border: '1px solid rgba(201,165,90,0.24)',
+                      background: 'rgba(201,165,90,0.06)',
+                    }}>
+                      <Image
+                        src={item.photos[0].src}
+                        alt={item.photos[0].alt}
+                        width={900}
+                        height={675}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+
+                    {item.photos.length > 1 && (
+                      <div style={{
+                        display: 'grid',
+                        gap: '8px',
+                        gridTemplateRows: item.photos.length > 2 ? '1fr 1fr' : '1fr',
+                      }}>
+                        {item.photos.slice(1, 3).map((photo) => (
+                          <div key={photo.src} style={{
+                            aspectRatio: item.photos.length > 2 ? '4 / 3' : (i % 2 === 0 ? '3 / 4' : '4 / 3'),
+                            overflow: 'hidden',
+                            borderRadius: '14px',
+                            border: '1px solid rgba(201,165,90,0.2)',
+                            background: 'rgba(201,165,90,0.05)',
+                          }}>
+                            <Image
+                              src={photo.src}
+                              alt={photo.alt}
+                              width={600}
+                              height={800}
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                display: 'block',
+                              }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
 
