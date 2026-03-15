@@ -10,13 +10,14 @@
   --dusty-pink:    #c4879a;
   --dusty-pink-dim:#a96d80;
   --dusty-pink-pale: #f5e8ec;
-  --gold:          #c9a55a;
-  --gold-dim:      #a8883f;
+  --gold:          #7f5b20;
+  --gold-on-dark:  #d8b56f;
+  --gold-dim:      #8e6828;
   --gold-pale:     #faf4e6;
   --cream:         #faf7f2;
   --warm-white:    #ffffff;
   --ink:           #1e1520;
-  --mid:           #7a6e78;
+  --mid:           #6b5f69;
   --border:        #e4dce8;
   --border-plum:   rgba(255,255,255,0.08);
 }
@@ -39,10 +40,31 @@ h1, h2, h3 {
 
 a { color: inherit; text-decoration: none; }
 
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 1000;
+  background: var(--ink);
+  color: var(--cream);
+  border: 2px solid var(--gold-on-dark);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus-visible {
+  top: 12px;
+}
+
 /* ── EYEBROW ── */
 .eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
@@ -84,7 +106,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.01em;
 }
 
-.nav-logo span { color: var(--gold); }
+.nav-logo span { color: var(--gold-on-dark); }
 
 .nav-links {
   display: flex;
@@ -95,10 +117,10 @@ a { color: inherit; text-decoration: none; }
 
 .nav-links a {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(250,247,242,0.55);
+  color: rgba(250,247,242,0.78);
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 3px;
@@ -111,20 +133,20 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-links .nav-cta {
-  color: var(--gold);
+  color: var(--gold-on-dark);
   border: 1px solid rgba(201,165,90,0.3);
   margin-left: 8px;
 }
 
 .nav-links .nav-cta:hover {
   background: rgba(201,165,90,0.1);
-  color: var(--gold);
+  color: var(--gold-on-dark);
 }
 
 /* ── FOOTER ── */
 .footer {
   background: var(--plum);
-  color: rgba(250,247,242,0.45);
+  color: rgba(250,247,242,0.5);
   padding: 56px 48px 40px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -142,7 +164,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.01em;
 }
 
-.footer-logo span { color: var(--gold); }
+.footer-logo span { color: var(--gold-on-dark); }
 
 .footer-tagline {
   font-size: 13px;
@@ -172,15 +194,15 @@ a { color: inherit; text-decoration: none; }
 
 .footer-links a {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(250,247,242,0.35);
+  color: rgba(250,247,242,0.78);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: var(--gold); }
+.footer-links a:hover { color: var(--gold-on-dark); }
 
 .footer-social {
   display: flex;
@@ -193,7 +215,7 @@ a { color: inherit; text-decoration: none; }
   height: 32px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(250,247,242,0.45);
+  color: rgba(250,247,242,0.6);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -212,7 +234,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-social a:hover {
-  color: var(--gold);
+  color: var(--gold-on-dark);
   border-color: rgba(201,165,90,0.45);
   background: rgba(201,165,90,0.08);
 }
@@ -253,10 +275,10 @@ a { color: inherit; text-decoration: none; }
 
 .page-hero-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-on-dark);
   margin-bottom: 16px;
 }
 
@@ -278,7 +300,7 @@ a { color: inherit; text-decoration: none; }
 .page-hero-desc {
   font-size: 15px;
   font-weight: 300;
-  color: rgba(250,247,242,0.5);
+  color: rgba(250,247,242,0.6);
   max-width: 480px;
   line-height: 1.75;
 }
@@ -286,7 +308,7 @@ a { color: inherit; text-decoration: none; }
 /* ── PILL LINKS ── */
 .pill {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
@@ -345,6 +367,50 @@ a { color: inherit; text-decoration: none; }
 .fade-3 { animation: fadeUp 0.6s 0.22s ease both; }
 .fade-4 { animation: fadeUp 0.6s 0.32s ease both; }
 
+/* ── ACCESSIBILITY ── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Ensure tiny inline utility text stays readable. */
+[style*="font-size: 9px"],
+[style*="font-size:9px"],
+[style*="font-size: 10px"],
+[style*="font-size:10px"],
+[style*="font-size: 11px"],
+[style*="font-size:11px"] {
+  font-size: 12px !important;
+}
+
+/* Normalize low-contrast alpha text inside dark blocks. */
+[style*="background:var(--plum)"] [style*="color: rgba(250,247,242,0."],
+[style*="background: var(--plum)"] [style*="color:rgba(250,247,242,0."],
+[style*="background: var(--plum)"] [style*="color: rgba(250,247,242,0."],
+[style*="background:var(--plum)"] [style*="color:rgba(250,247,242,0."] {
+  color: rgba(250,247,242,0.82) !important;
+}
+
+/* Ensure accent text on dark backgrounds is contrast-safe. */
+[style*="background:var(--plum)"] [style*="color: var(--gold)"],
+[style*="background: var(--plum)"] [style*="color:var(--gold)"],
+[style*="background: var(--plum)"] [style*="color: var(--gold)"],
+[style*="background:var(--plum)"] [style*="color:var(--gold)"] {
+  color: var(--gold-on-dark) !important;
+}
+
+/* Keep CTA button text legible after accent darkening. */
+[style*="background:var(--gold)"][style*="color: var(--plum)"],
+[style*="background: var(--gold)"][style*="color:var(--plum)"],
+[style*="background: var(--gold)"][style*="color: var(--plum)"],
+[style*="background:var(--gold)"][style*="color:var(--plum)"] {
+  color: var(--cream) !important;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .nav { padding: 0 20px; }
@@ -352,6 +418,14 @@ a { color: inherit; text-decoration: none; }
   .page-hero { padding: 52px 24px 44px; }
   .footer { padding: 40px 24px 32px; grid-template-columns: 1fr; }
   .footer-right { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* ── BLOG PROSE ── */

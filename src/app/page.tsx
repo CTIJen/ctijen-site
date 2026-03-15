@@ -312,7 +312,7 @@ export default function Home() {
                 fontSize: '10px',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: 'var(--dusty-pink)',
+                color: 'var(--mid)',
                 marginBottom: '12px',
               }}>Coming soon</div>
               <div style={{
@@ -346,7 +346,7 @@ export default function Home() {
                   fontSize: '10px',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: 'var(--dusty-pink)',
+                  color: 'var(--mid)',
                   marginBottom: '12px',
                 }}>
                   {new Date(post.date).toLocaleDateString('en-US', {
@@ -495,7 +495,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: 'var(--gold-dim)',
+                    color: 'var(--gold)',
                     textDecoration: 'none',
                   }}
                 >
@@ -509,9 +509,25 @@ export default function Home() {
             name="contact"
             method="POST"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
             style={{display:'flex', flexDirection:'column', gap:'12px', textAlign:'left'}}
           >
             <input type="hidden" name="form-name" value="contact" />
+            <input
+              type="text"
+              name="bot-field"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0,
+                pointerEvents: 'none',
+              }}
+            />
             {[
               {name:'name', placeholder:'Your name', type:'text'},
               {name:'email', placeholder:'Your email', type:'email'},

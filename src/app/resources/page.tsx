@@ -178,7 +178,7 @@ export default function ResourcesPage() {
       />
       <GradientRule />
 
-      <section style={{ padding: '80px 0', background: 'var(--cream)' }}>
+      <section style={{ padding: '80px 24px', background: 'var(--cream)' }}>
         <PageContainer>
           <div style={{
             display: 'flex', alignItems: 'center', gap: '16px',

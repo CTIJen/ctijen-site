@@ -1,5 +1,7 @@
 import './globals.css';
 import Nav from '@/components/Nav';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 const socialLinks = [
   {
@@ -64,17 +66,36 @@ const socialLinks = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL('https://ctijen.com'),
   title: 'Cyber Threat Intelli-Jen™',
   description: 'Everything CTI: resources, people, tools, and community',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://ctijen.com',
+    title: 'Cyber Threat Intelli-Jen™',
+    description: 'Everything CTI: resources, people, tools, and community',
+    siteName: 'Cyber Threat Intelli-Jen',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cyber Threat Intelli-Jen™',
+    description: 'Everything CTI: resources, people, tools, and community',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <Link href="#main-content" className="skip-link">
+          Skip to main content
+        </Link>
         <Nav />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
 
         <footer className="footer">
           <div>

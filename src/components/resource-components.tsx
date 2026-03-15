@@ -133,7 +133,7 @@ export function Tag({ children, variant = 'default' }: {
 }) {
   const styles = {
     free: { bg: 'rgba(26,107,58,0.1)', color: '#1a6b3a', border: 'rgba(26,107,58,0.2)' },
-    paid: { bg: 'rgba(180,83,9,0.1)', color: '#b45309', border: 'rgba(180,83,9,0.2)' },
+    paid: { bg: 'rgba(180,83,9,0.1)', color: '#9a3f05', border: 'rgba(180,83,9,0.28)' },
     beginner: { bg: 'rgba(37,99,168,0.1)', color: '#2563a8', border: 'rgba(37,99,168,0.2)' },
     advanced: { bg: 'rgba(45,27,61,0.1)', color: 'var(--plum)', border: 'rgba(45,27,61,0.2)' },
     default: { bg: 'rgba(201,165,90,0.1)', color: 'var(--gold-dim)', border: 'rgba(201,165,90,0.2)' },
