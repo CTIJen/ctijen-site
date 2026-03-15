@@ -478,44 +478,46 @@ export default function AboutPage() {
               title: 'Fitness',
               photos: [
                 { src: '/About/Gym.JPG', alt: 'Jen coaching and training in the gym.' },
+                { src: '/About/snatch.png', alt: 'Jen olympic lifting at the gym.' },
               ],
-              desc: 'I love lifting and coaching, even with a couple of battle scars. I coach Olympic lifting and HIIT at our local gym, and my favorite moment is when a cue finally clicks for someone.',
+              desc: 'I Love lifting and coaching at my local gym. With one actually diagnosed and one self-diagnosed torn rotator cuff, I\'m not as fit as I once was, but it\'s still a huge part of my life.',
             },
             {
               icon: '🪖',
-              title: 'Cosplay & Fandom',
+              title: 'Cosplay & 3D Printing',
               photos: [
                 { src: '/About/501st-weird-al.JPG', alt: 'Jen in 501st Legion cosplay at an event.' },
                 { src: '/About/Captain-Phasma.JPG', alt: 'Jen in Captain Phasma armor.' },
               ],
-              desc: "I 3D printed a full Captain Phasma armor set and joined the 501st Legion. I love using fandom for good through charity troops, and SDCC is a yearly highlight whenever I can get tickets.",
+              desc: "I have 3D printed a full Captain Phasma armor set and am a proud member of the 501st Legion of Star Wars cosplayers (with a DIFFERENT stormtrooper cosplay 😅). I love using fandom for good through charity troops, and San Diego Comic Con is a yearly highlight whenever I can get tickets.",
             },
             {
               icon: '🏰',
               title: 'Big Disney Energy',
               photos: [
-                { src: '/About/Disney-2.jpeg', alt: 'Jen enjoying a Disney Parks trip.' },
+                { src: '/About/adam-and-i.jpg', alt: 'Jen enjoying a Disney Parks trip.' },
                 { src: '/About/Disney.JPG', alt: 'Jen at Disney with a big smile.' },
               ],
-              desc: "I love Disney Parks because people are intentionally kind there. My long-term dream is helping plan and support Disney trips for families and travelers with disabilities.",
+              desc: "One of the biggest reasons I am drawn to Disney is because people are intentionally kind there. Seeing someone go out of their way to make anoter person's day magical makes me cry every time I'm there. My retirement dream is an agency that plans and staffs Disney trips for families and travelers with disabilities.",
             },
             {
               icon: '🖤',
               title: 'Style, Music, and Nerd Culture',
               photos: [
-                { src: '/About/Fashion.jpeg', alt: 'Jen showing her fashion and personal style.' },
-                { src: '/About/When-We-Were-Young.jpeg', alt: 'Jen at the When We Were Young music festival.' },
+                { src: '/About/When-We-Were-Young.png', alt: 'Jen at the When We Were Young music festival.' },
+                { src: '/About/Fashion.png', alt: 'Jen in latex top.' },
+                { src: '/About/SDCCDND.jpeg', alt: 'Jen in latex top.' },
               ],
-              desc: "I love fashion, comedy, and all things nerdy - from BG3 and D&D to Drag Race and musicals. Music runs my mood, and my style keeps evolving with me.",
-            },
+              desc: "You wouldn't know it by looking at me, but I LOVE fashion and am curating my own spooky style as I go. I LOVE Alexander McQueen, Stella McCartney's sustainability, Robert Wun, and I just got this amazing John Hardy dragon ring! They say comedians what to be rock stars and rock stars want to be comedians. I'd be happy with either. Comedy and music run through my veins. I played violin for years and long for more live music in my life. But seeing Brandi Carlile live that time we sat on the floor of SNL with Steve Martin and Martin Short hosting the Christmas episode, that was awesome.  I love RuPaul's Drag Race, I love musicals, I love Baldur's Gate 3 and Dungeons and Dragons but am still looking for my first real campaign if anyone is interested!"},
             {
               icon: '🏀',
               title: 'Family, Recovery, and Home Teams',
               photos: [
-                { src: '/About/Detroit-Basketball-2.JPG', alt: 'Jen representing Detroit basketball spirit.' },
-                { src: '/About/Detroit-Basketball.JPG', alt: 'Jen cheering for Detroit basketball.' },
+                { src: '/About/Detroit-Basketball-3.png', alt: 'Jen representing Detroit basketball spirit.' },
+                { src: '/About/Packers.png', alt: 'Jen representing Green Bay Packers spirit.' },
+                { src: '/About/sdcc2025.png', alt: 'Jen cheering for Detroit basketball.' },
               ],
-              desc: "Friends and family are everything to me. I'm proud of my recovery journey and celebrated my 5-year soberversary in 2024. Wisconsin and Michigan sports forever.",
+              desc: "This is where people tend to get confused. I grew up in Wisconsin. I went to the University of Wisconsin. I love all Wisconsin sports teams. HOWEVER, I also love the Detroit Pistons. The Tigers, Lions, and Red Wings are fine, but I'll always be Brewers, Packers, ... ok I guess the Red Wings win that one. I'm also incredibly proud of my sobriety. I am a recovering alcoholic (always will be) and am proud to be sober since 2018! Finally and probably most importantly, my family and friends bring me more joy than anything and I constantly wish I was spending more time with them <3",
             },
           ].map((item, i) => (
             <article key={i} style={{
