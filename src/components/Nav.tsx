@@ -19,6 +19,7 @@ export default function Nav() {
 
   const links = [
     { label: 'About', href: '/about' },
+    { label: 'Experience', href: '/experience' },
     { label: 'Blog', href: '/blog' },
     { label: 'Resources', href: '/resources' },
     { label: 'Merch', href: 'https://ctijen.myshopify.com', external: true },

@@ -3,6 +3,12 @@
 import Image from 'next/image';
 
 export default function AboutPage() {
+  const experienceSnapshot = [
+    { label: 'Cybersecurity Experience', value: '8+ years' },
+    { label: 'Dedicated CTI Focus', value: '6+ years' },
+    { label: 'Current Role', value: 'Senior Threat Intelligence Analyst' },
+  ];
+
   const communityItems = [
     {
       org: 'Stats on Stats',
@@ -180,53 +186,69 @@ export default function AboutPage() {
           fontSize: 'clamp(28px, 4vw, 44px)',
           fontWeight: 700,
           letterSpacing: '-0.01em',
-          marginBottom: '48px',
+          marginBottom: '12px',
         }}>The credentials</h2>
+        <p style={{
+          fontSize: '14px',
+          color: 'var(--mid)',
+          fontWeight: 300,
+          maxWidth: '760px',
+          lineHeight: 1.75,
+          marginBottom: '42px',
+        }}>
+          My day-to-day work is building and operationalizing threat intelligence programs that create measurable outcomes: sharper detections, faster incident response, and clearer executive decision support.
+        </p>
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: '12px',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gap: '10px',
+          marginBottom: '10px',
         }}>
-          {[
-            {
-              icon: '⚔️',
-              title: '11 Years in Tech',
-              desc: 'From Genius Bar to Enterprise CTI — a career built on curiosity and a genuine love for solving hard problems.',
-            },
-            {
-              icon: '🏅',
-              title: 'Certifications',
-              desc: 'Mandiant Intelligence Production, GSEC, AWS Cloud Practitioner. Completed SANS FOR578 and earned the top honors challenge coin.',
-            },
-            {
-              icon: '🎲',
-              title: '4 Years in CTI',
-              desc: 'Deep in threat actor tradecraft, intelligence production, and community education. Still learning every day.',
-            },
-          ].map((item, i) => (
+          {experienceSnapshot.map((item, i) => (
             <div key={i} style={{
               background: 'var(--warm-white)',
               border: '1px solid var(--border)',
               borderRadius: '5px',
-              padding: '28px',
+              padding: '18px',
             }}>
-              <div style={{ fontSize: '28px', marginBottom: '16px' }}>{item.icon}</div>
+              <div style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: '10px',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: 'var(--gold-dim)',
+                marginBottom: '8px',
+              }}>
+                {item.label}
+              </div>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: '20px',
+                fontSize: '24px',
                 fontWeight: 600,
                 color: 'var(--ink)',
-                marginBottom: '10px',
-              }}>{item.title}</div>
-              <p style={{
-                fontSize: '13px',
-                color: 'var(--mid)',
-                lineHeight: 1.7,
-                fontWeight: 300,
-              }}>{item.desc}</p>
+                lineHeight: 1.25,
+              }}>
+                {item.value}
+              </div>
             </div>
           ))}
+        </div>
+        <div style={{ marginTop: '24px' }}>
+          <a href="/experience" style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: '10px',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: 'var(--gold-dim)',
+            border: '1px solid rgba(201,165,90,0.35)',
+            borderRadius: '3px',
+            padding: '10px 14px',
+            textDecoration: 'none',
+            display: 'inline-block',
+          }}>
+            View full experience details →
+          </a>
         </div>
       </section>
 
