@@ -44,7 +44,7 @@ export default function ConferencesPage() {
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = i % 2 === 0 ? 'var(--cream)' : 'var(--warm-white)'}>
               <div style={{ padding: '20px 24px', borderRight: '1px solid var(--border)' }}>
-                <a href={con.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '17px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>{con.name}</a>
+                <a href={con.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '17px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>{con.name} ↗</a>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '9px', color: 'var(--mid)', letterSpacing: '0.08em' }}>{con.type}</span>
               </div>
               <div style={{ padding: '20px 16px', borderRight: '1px solid var(--border)', display: 'flex', alignItems: 'center' }}>

@@ -32,7 +32,7 @@ export default function PodcastsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '12px', marginBottom: '64px' }}>
             {ctiPodcasts.map((p, i) => (
               <ResourceCard key={i}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{p.name}</a>
+                <a href={p.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{p.name} ↗</a>
                 <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, fontWeight: 300 }}>{p.desc}</p>
               </ResourceCard>
             ))}
@@ -41,7 +41,7 @@ export default function PodcastsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '12px' }}>
             {generalPodcasts.map((p, i) => (
               <ResourceCard key={i}>
-                <a href={p.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{p.name}</a>
+                <a href={p.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{p.name} ↗</a>
                 <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, fontWeight: 300 }}>{p.desc}</p>
               </ResourceCard>
             ))}

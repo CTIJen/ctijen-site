@@ -37,7 +37,7 @@ export default function CertificationsPage() {
               <div key={i} style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', padding: '24px', display: 'grid', gridTemplateColumns: '1fr auto', gap: '24px', alignItems: 'start' }}>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                    <a href={cert.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>{cert.name}</a>
+                    <a href={cert.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>{cert.name} ↗</a>
                     {cert.ctiSpecific && <Tag variant="advanced">CTI Cert</Tag>}
                   </div>
                   <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.7, fontWeight: 300 }}>{cert.desc}</p>

@@ -90,9 +90,6 @@ export default function ExperiencePage() {
         <h1 className="page-hero-title">
           Real-world <em>CTI impact</em>
         </h1>
-        <p className="page-hero-desc">
-          Detailed background for hiring teams, collaborators, and leaders evaluating practical threat intelligence program experience.
-        </p>
         <p
           style={{
             marginTop: '20px',

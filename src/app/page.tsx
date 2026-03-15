@@ -462,6 +462,49 @@ export default function Home() {
             Questions, suggestions, or just want to say hi.
           </p>
 
+          <div style={{
+            fontFamily: "'DM Mono', monospace",
+            fontSize: '10px',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'rgba(250,247,242,0.4)',
+            marginBottom: '18px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '6px',
+          }}>
+            <span style={{ color: 'rgba(250,247,242,0.35)' }}>Prefer socials?</span>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '10px',
+              justifyContent: 'center',
+            }}>
+              {[
+                { label: 'LinkedIn |', href: 'https://www.linkedin.com/in/ctijen/' },
+                { label: 'X |', href: 'https://x.com/CTIJen_' },
+                { label: 'GitHub |', href: 'https://github.com/CTIJen' },
+                { label: 'TikTok |', href: 'https://www.tiktok.com/@ctijen' },
+                { label: 'Facebook |', href: 'https://facebook.com/ctijen1/' },
+                { label: 'Instagram', href: 'https://www.instagram.com/cti_jen/' },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'var(--gold-dim)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {social.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
           <form
             name="contact"
             method="POST"

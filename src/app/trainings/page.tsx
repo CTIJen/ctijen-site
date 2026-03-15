@@ -37,7 +37,7 @@ export default function TrainingsPage() {
               <ResourceCard key={i}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px', gap: '8px' }}>
                   <a href={t.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>
-                    {t.name}
+                    {t.name} ↗
                   </a>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'flex-end', flexShrink: 0 }}>
                     <Tag variant={t.cost.startsWith('Free') ? 'free' : 'paid'}>{t.cost}</Tag>

@@ -33,7 +33,7 @@ function CapabilityTable({ title, rows }: {
                     style={{ fontWeight: 500, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '3px' }}
                     onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = 'var(--dusty-pink-dim)'}
                     onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'var(--ink)'}>
-                    {row.name}
+                    {row.name} ↗
                   </a>
                   <span style={{ fontSize: '12px', color: 'var(--mid)', fontWeight: 300 }}>{row.desc}</span>
                 </td>
@@ -76,7 +76,7 @@ export default function ToolsPage() {
             {tips.map((tip, i) => (
               <div key={i} style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', display: 'grid', gridTemplateColumns: '200px 140px 1fr', overflow: 'hidden' }}>
                 <div style={{ padding: '20px 24px', borderRight: '1px solid var(--border)' }}>
-                  <a href={tip.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '6px' }}>{tip.name}</a>
+                  <a href={tip.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '6px' }}>{tip.name} ↗</a>
                   <Tag variant="free">{tip.cost}</Tag>
                 </div>
                 <div style={{ padding: '20px 16px', borderRight: '1px solid var(--border)', display: 'flex', alignItems: 'center' }}>

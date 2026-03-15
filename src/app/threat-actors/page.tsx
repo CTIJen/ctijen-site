@@ -32,7 +32,7 @@ export default function ThreatActorsPage() {
                   { name: 'CISA Known Exploited Vulnerabilities', href: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog', desc: 'Not actor-specific, but critical for understanding what threat actors are actively exploiting in the wild.' },
                 ].map((item, i) => (
                   <div key={i} style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', padding: '20px 24px', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '24px', alignItems: 'center' }}>
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '17px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>{item.name}</a>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '17px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none' }}>{item.name} ↗</a>
                     <p style={{ fontSize: '13px', color: 'var(--mid)', fontWeight: 300, lineHeight: 1.6 }}>{item.desc}</p>
                   </div>
                 ))}

@@ -27,7 +27,7 @@ export default function JobsPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '12px' }}>
             {boards.map((board, i) => (
               <ResourceCard key={i}>
-                <a href={board.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{board.name}</a>
+                <a href={board.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '18px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '10px' }}>{board.name} ↗</a>
                 <p style={{ fontSize: '13px', color: 'var(--mid)', lineHeight: 1.65, fontWeight: 300 }}>{board.desc}</p>
               </ResourceCard>
             ))}

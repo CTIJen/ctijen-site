@@ -23,7 +23,7 @@ export default function MentorshipPage() {
               <div key={i} style={{ background: 'var(--warm-white)', border: '1px solid var(--border)', borderRadius: '5px', padding: '28px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', marginBottom: '12px' }}>
                   <div>
-                    <a href={org.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>{org.name}</a>
+                    <a href={org.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 700, color: 'var(--ink)', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>{org.name} ↗</a>
                     <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', color: 'var(--gold-dim)', letterSpacing: '0.06em' }}>{org.format}</span>
                   </div>
                   <Tag variant={org.cost.startsWith('Free') ? 'free' : 'paid'}>{org.cost}</Tag>
