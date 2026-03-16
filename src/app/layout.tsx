@@ -70,6 +70,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ctijen.com'),
   title: 'Cyber Threat Intelli-Jen™',
   description: 'Everything CTI: resources, people, tools, and community',
+  icons: {
+    icon: '/brain.png',
+    shortcut: '/brain.png',
+    apple: '/brain.png',
+  },
   alternates: {
     canonical: '/',
   },
