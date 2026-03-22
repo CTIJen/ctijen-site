@@ -1,22 +1,6 @@
 import type { NextConfig } from "next";
 
-const securityHeaders = [
-  {
-    key: "Content-Security-Policy",
-    value: [
-      "default-src 'self'",
-      "base-uri 'self'",
-      "frame-ancestors 'none'",
-      "object-src 'none'",
-      "form-action 'self'",
-      "img-src 'self' data: blob: https:",
-      "font-src 'self' https://fonts.gstatic.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "script-src 'self' 'unsafe-inline'",
-      "connect-src 'self' https:",
-      "upgrade-insecure-requests",
-    ].join("; "),
-  },
+const baseSecurityHeaders = [
   {
     key: "Referrer-Policy",
     value: "strict-origin-when-cross-origin",
@@ -39,13 +23,50 @@ const securityHeaders = [
   },
 ];
 
+const baseCspDirectives = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "frame-ancestors 'none'",
+  "object-src 'none'",
+  "form-action 'self'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' https://fonts.gstatic.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "script-src 'self' 'unsafe-inline'",
+  "connect-src 'self' https:",
+  "upgrade-insecure-requests",
+];
+
+const globalSecurityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: [...baseCspDirectives, "frame-src 'none'"].join("; "),
+  },
+  ...baseSecurityHeaders,
+];
+
+const prankPageSecurityHeaders = [
+  {
+    key: "Content-Security-Policy",
+    value: [
+      ...baseCspDirectives,
+      "frame-src https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    ].join("; "),
+  },
+  ...baseSecurityHeaders,
+];
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
   async headers() {
     return [
       {
         source: "/(.*)",
-        headers: securityHeaders,
+        headers: globalSecurityHeaders,
+      },
+      {
+        source: "/sneaky-sneaky-prank-page",
+        headers: prankPageSecurityHeaders,
       },
     ];
   },

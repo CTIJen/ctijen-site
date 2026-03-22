@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import { getAllPosts } from '@/lib/posts';
 
-export default function Home() {
+type HomeProps = {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function Home({ searchParams }: HomeProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : {};
+  const contactStatusParam = resolvedSearchParams.contact;
+  const contactStatus = Array.isArray(contactStatusParam) ? contactStatusParam[0] : contactStatusParam;
   const latestPosts = getAllPosts().slice(0, 3);
 
   return (
@@ -508,11 +515,21 @@ export default function Home() {
           <form
             name="contact"
             method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            action="/api/contact"
+            acceptCharset="UTF-8"
             style={{display:'flex', flexDirection:'column', gap:'12px', textAlign:'left'}}
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="subject" value="CTIJen Contact Form Submission" />
+            {contactStatus === 'sent' && (
+              <p style={{ color: 'var(--gold-on-dark)', fontSize: '13px', lineHeight: 1.6 }}>
+                Thank you! Your message was sent successfully.
+              </p>
+            )}
+            {contactStatus === 'error' && (
+              <p style={{ color: 'var(--dusty-pink)', fontSize: '13px', lineHeight: 1.6 }}>
+                Sorry, there was a problem submitting the form. Please try again or use social links.
+              </p>
+            )}
             <input
               type="text"
               name="bot-field"
@@ -529,13 +546,38 @@ export default function Home() {
               }}
             />
             {[
-              {name:'name', placeholder:'Your name', type:'text'},
-              {name:'email', placeholder:'Your email', type:'email'},
+              {
+                name:'name',
+                placeholder:'Your name',
+                type:'text',
+                autoComplete: 'name',
+                minLength: 2,
+                maxLength: 80,
+                pattern: "^[A-Za-z0-9 .,'-]{2,80}$",
+                title: 'Please enter 2-80 valid characters for your name.',
+                inputMode: 'text' as const,
+              },
+              {
+                name:'email',
+                placeholder:'Your email',
+                type:'email',
+                autoComplete: 'email',
+                minLength: 6,
+                maxLength: 254,
+                inputMode: 'email' as const,
+              },
             ].map(field => (
               <input key={field.name}
                 type={field.type}
                 name={field.name}
                 placeholder={field.placeholder}
+                autoComplete={field.autoComplete}
+                minLength={field.minLength}
+                maxLength={field.maxLength}
+                pattern={field.pattern}
+                title={field.title}
+                inputMode={field.inputMode}
+                aria-label={field.placeholder}
                 required
                 style={{
                   background: 'rgba(255,255,255,0.06)',
@@ -554,6 +596,10 @@ export default function Home() {
               name="message"
               placeholder="Your message"
               required
+              autoComplete="off"
+              minLength={10}
+              maxLength={4000}
+              aria-label="Your message"
               rows={5}
               style={{
                 background: 'rgba(255,255,255,0.06)',

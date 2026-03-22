@@ -71,9 +71,12 @@ export const metadata: Metadata = {
   title: 'Cyber Threat Intelli-Jen™',
   description: 'Everything CTI: resources, people, tools, and community',
   icons: {
-    icon: '/brain.png',
+    icon: [
+      { url: '/brain.png', type: 'image/png', sizes: '32x32' },
+      { url: '/brain.png', type: 'image/png', sizes: '192x192' },
+    ],
     shortcut: '/brain.png',
-    apple: '/brain.png',
+    apple: [{ url: '/brain.png', sizes: '180x180' }],
   },
   alternates: {
     canonical: '/',
@@ -132,6 +135,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span className="footer-skull">☠</span>
             <p>I do not represent or speak for my employer.</p>
             <p>All opinions are my own.</p>
+            <p>
+              Accessibility: <Link href="/accessibility">statement and conformance details</Link>.
+            </p>
           </div>
         </footer>
       </body>
