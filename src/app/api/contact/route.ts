@@ -111,6 +111,11 @@ async function sendViaResend(payload: {
     }),
   });
 
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error(`Resend delivery failed (${response.status}): ${errorText}`);
+  }
+
   return response.ok;
 }
 
@@ -141,6 +146,11 @@ async function sendViaWebhook(payload: {
       ...payload,
     }),
   });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.error(`Webhook delivery failed (${response.status}): ${errorText}`);
+  }
 
   return response.ok;
 }
@@ -177,10 +187,24 @@ export async function POST(request: NextRequest) {
   }
 
   const payload = { name, email, message, subject, clientIp, userAgent };
+  const hasResendEnv = Boolean(
+    process.env.RESEND_API_KEY &&
+    process.env.CONTACT_TO_EMAIL &&
+    process.env.CONTACT_FROM_EMAIL
+  );
+  const hasWebhookEnv = Boolean(process.env.CONTACT_WEBHOOK_URL);
   const delivered = (await sendViaResend(payload)) || (await sendViaWebhook(payload));
 
   if (!delivered) {
-    console.error('Contact form not delivered: configure RESEND_* or CONTACT_WEBHOOK_* env vars.');
+    if (!hasResendEnv && !hasWebhookEnv) {
+      console.error(
+        'Contact form not delivered: missing delivery configuration. Set RESEND_* or CONTACT_WEBHOOK_* environment variables.'
+      );
+    } else {
+      console.error(
+        'Contact form not delivered: provider rejected request. Check CONTACT_FROM_EMAIL domain/sender verification and API key.'
+      );
+    }
     return redirectToContact(request, 'error');
   }
 
