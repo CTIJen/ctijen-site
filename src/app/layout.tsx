@@ -2,6 +2,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/next';
 
 const socialLinks = [
   {
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
